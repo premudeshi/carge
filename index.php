@@ -1,3 +1,7 @@
+<?php
+require 'dbconfig.php';
+
+?>
 <!doctype html>
 <!--
   Material Design Lite
