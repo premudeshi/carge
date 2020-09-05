@@ -83,10 +83,10 @@
         <a href="#orders" class="mdl-layout__tab">Orders</a>
         <a href="#features" class="mdl-layout__tab">Technology</a>
         <a href="#features" class="mdl-layout__tab">FAQ</a>
-        <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--4dp mdl-color--accent" id="add">
+        <a href="neworder.php"><button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--4dp mdl-color--accent" id="add" >
           <i class="material-icons" role="presentation">add</i>
           <span class="visuallyhidden">Add</span>
-        </button>
+        </button></a>
       </div>
     </header>
     <main class="mdl-layout__content">
@@ -246,7 +246,7 @@
       <div class="mdl-layout__tab-panel" id="orders">
         <section class="section--center mdl-grid mdl-grid--no-spacing">
           <div class="mdl-cell mdl-cell--12-col">
-            <h4>Orders</h4>
+            <h4 style="font-family: logoFont;">Orders</h4>
             
 
           </div>
