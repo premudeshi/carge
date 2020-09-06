@@ -15,16 +15,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $link = $_POST['link'];
 
 
-        $products[$id]['name'] = $value;
-        $products[$id]['attributes'] = $attribes[$id];
-        $products[$id]['quantity'] = $quantity[$id];
-        $products[$id]['price'] = $price[$id];
-        $products[$id]['shipping'] = $shipping[$id];
-        $products[$id]['total'] = $total[$id];
-        $products[$id]['link'] = $link[$id];
+        $products['products'][$id]['name'] = $value;
+        $products['products'][$id]['status'] = 'Ordered';
+        $products['products'][$id]['attributes'] = $attribes[$id];
+        $products['products'][$id]['quantity'] = $quantity[$id];
+        $products['products'][$id]['price'] = $price[$id];
+        $products['products'][$id]['shipping'] = $shipping[$id];
+        $products['products'][$id]['total'] = $total[$id];
+        $products['products'][$id]['link'] = $link[$id];
 
         $id = $id + 1;
     }
+    $products['address'] = $_POST['address'];
+    $products['total'] = $_POST['total_amount'];
+    $products['shipping method'] = $_POST['shippingmethod'];
     $products = json_encode($products);
     // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
@@ -57,6 +61,9 @@ VALUES ('$date', '$products', 'Started')";
     <div class="container">
         <div class="row clearfix">
             <div class="col-md-12">
+            <label>Address:</label><input required type="text" name='address' placeholder='Enter Address' class="form-control" /><br>
+            <label>Shipping Method:</label><input required type="text" name='shippingmethod' placeholder='Shipping Method' class="form-control" /><br>
+
                 <table class="table table-bordered table-hover" id="tab_logic">
                     <thead>
                         <tr>
